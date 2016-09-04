@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Handlebars</title>
+        <link rel="stylesheet" href="styles.css">
+        <!--Það þarf að sækja og laga vísun á jquery og handlebars -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/handlebars.js"></script>
+    </head>
+    <body>
+
+        <!-- This is the container where the templates will be instantiated -->
+        <div id="container"></div>
+
+        <script id="itemTemplate" type="text/x-handlebars-template">
+
+          <!-- Allir -->
+          {{#each employees}}
+              <p><b>{{name}}</b></p>
+              <p>{{title}}</p>
+              <p>{{email}}</p>
+              <p>{{phone}}</p>
+          {{/each}}
+
+          <hr>
+
+          <!-- Full TIme -->
+          {{#each employees}}
+            {{#if fulltime}}
+            <b>Full Time</b>
+            <p>{{name}}</p>
+            {{else}}
+            <b>Part Time</b>
+            <p>{{name}}</p>
+            {{/if}}
+          {{/each}}
+
+        </script>
+
+          <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
